@@ -1,0 +1,76 @@
+
+import datetime
+import random
+
+
+def randomnum():
+    dohtheyneedanum = input('Im guessing you came here for a random number? (y,n)')
+    if dohtheyneedanum == 'y':
+        rnum1 = input('what is the lowest number')
+        rnum2 = input('what is the highest number')
+        print(random.randrange(int(rnum1),int(rnum2)))
+
+def time():
+    timeOrdate = input('would you like to know the time, date, or both?')
+    if timeOrdate == 'time':
+        print(datetime.datetime.now().strftime("%H:%M:%S"))
+    if timeOrdate == 'date':
+        print(datetime.date.today())
+    if timeOrdate == 'both':
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S"))
+
+
+def calculator():
+
+    operation = input("What operation would you like to perform? (add,subtract,divide,multiply,square)")
+
+    if operation == 'add':
+        anum1 = input('what is the first number you would like to add?')
+        anum2=  input('what is the second number you would like to add?')
+        print(int(anum1)+int(anum2))
+        again = input('would you like to do another? (y,n)')
+        if again == 'y':
+            start()
+
+    if operation == 'subtract':
+        snum1 = input('what is the first number you would like to subtract?')
+        snum2 = input('what is the second number you would like to subtract?')
+        print(int(snum1)-int(snum2))
+        again = input('would you like to do another? (y,n)')
+        if again == 'y':
+            start()
+
+    if operation == 'multiply':
+        mnum1 = input('what is the first number that you would like to multiply?')
+        mnum2 = input('what is the second number that you would like to mulitply?')
+        print(int(mnum1)*int(mnum2))
+        again = input('would you like to do another? (y,n)')
+        if again == 'y':
+            start()
+
+    if operation == 'divide':
+        dnum1 = input('what is the first number that you would like to divide?')
+        dnum2 = input('what is the second number that you would like to divide?')
+        print(int(dnum1) / int(dnum2))
+        again = input('would you like to do another? (y,n)')
+        if again == 'y':
+            start()
+
+
+
+def start():
+
+    help = input('what can I help you with? (type help for HELP)')
+
+    if help == 'time':
+        time()
+    if help == 'calculator':
+        calculator()
+    if help == 'HELP':
+        print ('type any of the following commands \n time : displays date or time \n calculator : complete simply mathmatics \n randomnumber : generates a random number between a specific range')
+        start()
+    if help == 'randomnumber':
+        randomnum()
+
+
+start()
